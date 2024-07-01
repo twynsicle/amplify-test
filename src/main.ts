@@ -13,6 +13,10 @@ import { Amplify } from 'aws-amplify';
 import awsExports from './aws-exports';
 import AmplifyVue from '@aws-amplify/ui-vue';
 
+// Components
+import { Cropper } from 'vue-advanced-cropper';
+import { createPinia } from 'pinia';
+
 Amplify.configure(awsExports);
 
 const vuetify = createVuetify({
@@ -20,9 +24,13 @@ const vuetify = createVuetify({
   directives,
 });
 
+const pinia = createPinia();
+
 const app = createApp(App);
+app.component('cropper', Cropper);
 
 app.use(AmplifyVue);
 app.use(vuetify);
+app.use(pinia);
 
 app.mount('#app');

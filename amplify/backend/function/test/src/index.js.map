@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../ts/index.ts"],
+  "sourcesContent": ["import {\n  APIGatewayProxyEvent,\n  APIGatewayProxyResult,\n} from 'aws-lambda/trigger/api-gateway-proxy';\n\nexport const lambdaHandler = async (\n  event: APIGatewayProxyEvent\n): Promise<APIGatewayProxyResult> => {\n  const queries = JSON.stringify(event.queryStringParameters);\n  return {\n    statusCode: 200,\n    body: `Queries: ${queries}`,\n  };\n};\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAKO,IAAM,gBAAgB,OAC3B,UACmC;AACnC,QAAM,UAAU,KAAK,UAAU,MAAM,qBAAqB;AAC1D,SAAO;AAAA,IACL,YAAY;AAAA,IACZ,MAAM,YAAY,OAAO;AAAA,EAC3B;AACF;",
+  "names": []
+}

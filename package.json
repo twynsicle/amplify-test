@@ -6,22 +6,29 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "amplify:test": "cd amplify/backend/function/test/ts && node esbuild.config.js",
+    "install:all": "concurrently \"npm install\" \"cd amplify/backend/function/test/ts && npm install\""
   },
   "dependencies": {
     "@aws-amplify/ui-vue": "^4.2.3",
     "aws-amplify": "^6.0.21",
+    "pinia": "^2.1.7",
     "vue": "^3.4.21",
+    "vue-advanced-cropper": "^2.8.8",
     "vuetify": "^3.5.11"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "@typescript-eslint/parser": "^7.3.1",
     "@vitejs/plugin-vue": "^5.0.4",
+    "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vue": "^9.23.0",
     "prettier": "^3.2.5",
+    "sass": "^1.74.1",
+    "sass-loader": "^14.1.1",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vue-tsc": "^2.0.6"
